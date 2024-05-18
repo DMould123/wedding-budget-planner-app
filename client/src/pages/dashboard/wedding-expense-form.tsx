@@ -1,7 +1,15 @@
 export const WeddingExpenseForm = () => {
+  const [description, setDescription] = useState<string>('')
+  const [cost, setCost] = useState<string>('')
+  const [description, setDescription] = useState<string>('')
+  const [paymentMethod, setPaymentMethod] = useState<string>('')
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
   return (
     <div className="form-container">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-field">
           <label>Description:</label>
           <input type="text" required className="input" />
