@@ -1,5 +1,6 @@
 import express, { Express } from 'express'
 import mongoose from 'mongoose'
+import weddingExpensesRouter from './routes/wedding-routes'
 import cors from 'cors'
 import dotenv from 'dotenv'
 
@@ -17,6 +18,8 @@ mongoose
   .connect(mongoURI)
   .then(() => console.log('CONNECTED TO MONGODB!'))
   .catch((err) => console.error('Failed to Connect to MongoDB:', err))
+
+app.use('/wedding-expenses', weddingExpensesRouter)
 
 app.listen(port, () => {
   console.log(`Server Running on Port ${port}`)
