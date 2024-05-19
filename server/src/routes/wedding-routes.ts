@@ -27,4 +27,23 @@ router.post('/', async (req: Request, res: Response) => {
   }
 })
 
+router.put('/:id', async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id
+    const newExpenseBody = req.body
+
+    const expense = await WeddingExpensesModel.findByIdAndUpdate(
+      id,
+      newExpenseBody,
+      { new: true }
+    )
+
+    if (!expense) return res.status(404).send('Expense not found.')
+
+    res.status(200).send(expense)
+  } catch (err) {
+    res.status(500).send(err)
+  }
+})
+
 export default router
