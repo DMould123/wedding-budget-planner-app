@@ -46,4 +46,17 @@ router.put('/:id', async (req: Request, res: Response) => {
   }
 })
 
+router.delete('/:id', async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id
+    const expense = await WeddingExpensesModel.findByIdAndDelete(id)
+    if (!expense) {
+      return res.status(404).send('Expense not found.')
+    }
+    res.status(200).send(expense)
+  } catch (err) {
+    res.status(500).send(err)
+  }
+})
+
 export default router
