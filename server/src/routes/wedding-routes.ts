@@ -3,10 +3,12 @@ import WeddingExpensesModel from '../schema/wedding-expenses'
 
 const router = express.Router()
 
+// GET all expenses by user ID
 router.get('/getAllByUserID/:userId', async (req: Request, res: Response) => {
   try {
     const userId = req.params.userId
     const expenses = await WeddingExpensesModel.find({ userId: userId })
+
     if (expenses.length === 0) {
       return res.status(404).send('No expenses found for this user.')
     }
@@ -16,17 +18,20 @@ router.get('/getAllByUserID/:userId', async (req: Request, res: Response) => {
   }
 })
 
+// POST a new expense
 router.post('/', async (req: Request, res: Response) => {
   try {
     const newExpenseBody = req.body
     const newExpense = new WeddingExpensesModel(newExpenseBody)
     const savedExpense = await newExpense.save()
+
     res.status(200).send(savedExpense)
   } catch (err) {
     res.status(500).send(err)
   }
 })
 
+// PUT update an existing expense by ID
 router.put('/:id', async (req: Request, res: Response) => {
   try {
     const id = req.params.id
@@ -46,10 +51,12 @@ router.put('/:id', async (req: Request, res: Response) => {
   }
 })
 
+// DELETE an expense by ID
 router.delete('/:id', async (req: Request, res: Response) => {
   try {
     const id = req.params.id
     const expense = await WeddingExpensesModel.findByIdAndDelete(id)
+
     if (!expense) {
       return res.status(404).send('Expense not found.')
     }
