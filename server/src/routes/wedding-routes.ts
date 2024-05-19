@@ -16,4 +16,15 @@ router.get('/getAllByUserID/:userId', async (req: Request, res: Response) => {
   }
 })
 
+router.post('/', async (req: Request, res: Response) => {
+  try {
+    const newExpenseBody = req.body
+    const newExpense = new WeddingExpensesModel(newExpenseBody)
+    const savedExpense = await newExpense.save()
+    res.status(200).send(savedExpense)
+  } catch (err) {
+    res.status(500).send(err)
+  }
+})
+
 export default router
