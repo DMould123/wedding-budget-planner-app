@@ -1,26 +1,65 @@
+import { useState } from 'react'
+import { useUser } from '@clerk/clerk-react'
+import { useWeddingExpenses } from '../../context/wedding-expenses-context.tsx'
+
 export const WeddingExpenseForm = () => {
   const [description, setDescription] = useState<string>('')
   const [cost, setCost] = useState<string>('')
-  const [description, setDescription] = useState<string>('')
+  const [category, setCategory] = useState<string>('')
   const [paymentMethod, setPaymentMethod] = useState<string>('')
+  const { addExpense } = useWeddingExpenses()
+  const { user } = useUser()
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    event.preventDefault()
+
+    const newExpense = {
+      userId: user?.id ?? '',
+      date: new Date(),
+      description,
+      cost: parseFloat(cost),
+      category,
+      paymentMethod
+    }
+
+    addExpense(newExpense)
+    setDescription('')
+    setCost('')
+    setCategory('')
+    setPaymentMethod('')
+  }
 
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         <div className="form-field">
           <label>Description:</label>
-          <input type="text" required className="input" />
+          <input
+            type="text"
+            required
+            className="input"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
         </div>
         <div className="form-field">
           <label>Amount:</label>
-          <input type="number" required className="input" />
+          <input
+            type="number"
+            required
+            className="input"
+            value={cost}
+            onChange={(e) => setCost(e.target.value)}
+          />
         </div>
         <div className="form-field">
           <label>Category:</label>
-          <select required className="input">
+          <select
+            required
+            className="input"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
             <option value="">Select a Category</option>
             <option value="Venue">Venue</option>
             <option value="Catering">Catering</option>
@@ -37,11 +76,17 @@ export const WeddingExpenseForm = () => {
         </div>
         <div className="form-field">
           <label>Payment Method:</label>
-          <select required className="input">
+          <select
+            required
+            className="input"
+            value={paymentMethod}
+            onChange={(e) => setPaymentMethod(e.target.value)}
+          >
             <option value="">Select a Payment Method</option>
             <option value="Credit Card">Credit Card</option>
             <option value="Cash">Cash</option>
             <option value="Bank Transfer">Bank Transfer</option>
+            <option value="Cheque">Cheque</option>
           </select>
         </div>
         <button type="submit" className="button">
@@ -51,3 +96,5 @@ export const WeddingExpenseForm = () => {
     </div>
   )
 }
+
+export default WeddingExpenseForm
