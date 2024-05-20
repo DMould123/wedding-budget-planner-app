@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import { useUser } from '@clerk/clerk-react'
 
 export interface WeddingExpense {
