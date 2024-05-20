@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useUser } from '@clerk/clerk-react'
 
-interface WeddingExpense {
+export interface WeddingExpense {
   _id?: string
   userId: string
   date: Date
