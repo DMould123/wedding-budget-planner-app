@@ -1,0 +1,104 @@
+/* Centered container for the app */
+.dashboard-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* General styling for headers within the app */
+h1,
+h2 {
+  color: #ff5e7d;
+  text-align: center;
+}
+
+/* Form and list container */
+.form-container,
+.list-container {
+  margin-bottom: 20px;
+}
+
+/* Common class for all buttons */
+.button {
+  background-color: #ff5e7d;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #fc1173;
+}
+
+/* Common class for delete buttons */
+.button-delete {
+  background-color: #ff6363;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-weight: bold;
+}
+
+.button-delete:hover {
+  background-color: #d43939;
+}
+
+/* Common class for all input fields and selects */
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #333333;
+}
+
+/* Labels for better readability */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Table styling */
+.table-container {
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background-color: #ff5e7d;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+.table tbody tr:hover {
+  background-color: #f0f0f0;
+}
