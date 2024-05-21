@@ -1,28 +1,33 @@
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Dashboard } from './pages/dashboard'
 import { Auth } from './pages/auth'
-import { WeddingExpensesProvider } from './context/wedding-expenses-context.tsx'
+import { WeddingExpensesProvider } from './context/wedding-expenses-context'
+import { SignedIn, UserButton } from '@clerk/clerk-react'
 
 function App() {
   return (
-    <>
-      <Router>
-        <div className="app-container">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <WeddingExpensesProvider>
-                  <Dashboard />
-                </WeddingExpensesProvider>
-              }
-            />
-            <Route path="/auth" element={<Auth />} />
-          </Routes>
+    <Router>
+      <div className="app-container">
+        <div className="navbar">
+          <Link to="/"> Dashboard</Link>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
-      </Router>
-    </>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <WeddingExpensesProvider>
+                <Dashboard />
+              </WeddingExpensesProvider>
+            }
+          />
+          <Route path="/auth" element={<Auth />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

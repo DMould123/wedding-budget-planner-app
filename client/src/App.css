@@ -19,7 +19,7 @@ html {
 
 /* Navbar styles */
 .navbar {
-  background-color: #3498db; /* Blue shade that matches button colors */
+  background-color: #ff5e7d;
   padding: 10px 20px;
   padding-right: 50px;
   display: flex;
@@ -38,7 +38,7 @@ html {
 }
 
 .navbar a {
-  color: white; /* Ensures links are white */
+  color: white;
   text-decoration: none;
   margin-right: 20px;
   font-weight: bold;
@@ -46,7 +46,7 @@ html {
 }
 
 .navbar a:hover {
-  color: #e0e0e0; /* Light grey for hover effect */
+  color: #e0e0e0;
 }
 
 /* Specific styling for Clerk's UserButton if needed */
