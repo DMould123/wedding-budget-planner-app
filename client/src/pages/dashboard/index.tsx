@@ -10,11 +10,7 @@ export const Dashboard = () => {
   const { expenses } = useWeddingExpenses()
 
   const weddingTotal = useMemo(() => {
-    let totalAmount = 0
-    expenses.forEach((expense) => {
-      totalAmount += expense.cost
-    })
-    return totalAmount
+    return expenses.reduce((total, expense) => total + expense.cost, 0)
   }, [expenses])
 
   return (

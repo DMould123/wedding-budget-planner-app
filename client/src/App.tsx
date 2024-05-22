@@ -1,20 +1,17 @@
 import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Dashboard } from './pages/dashboard'
 import { Auth } from './pages/auth'
 import { WeddingExpensesProvider } from './context/wedding-expenses-context'
-import { SignedIn, UserButton } from '@clerk/clerk-react'
+import Navbar from './components/Navbar'
+import { About } from './pages/About'
+import { Contact } from './pages/Contact'
 
 function App() {
   return (
     <Router>
       <div className="app-container">
-        <div className="navbar">
-          <Link to="/"> Dashboard</Link>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </div>
+        <Navbar />
         <Routes>
           <Route
             path="/"
@@ -24,6 +21,8 @@ function App() {
               </WeddingExpensesProvider>
             }
           />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/auth" element={<Auth />} />
         </Routes>
       </div>
