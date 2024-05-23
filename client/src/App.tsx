@@ -1,30 +1,14 @@
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Dashboard } from './pages/dashboard'
-import { Auth } from './pages/auth'
-import { WeddingExpensesProvider } from './context/wedding-expenses-context'
+import { BrowserRouter as Router } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import { About } from './pages/About'
-import { Contact } from './pages/Contact'
+import AppRoutes from './routes/routes'
 
 function App() {
   return (
     <Router>
       <div className="app-container">
         <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <WeddingExpensesProvider>
-                <Dashboard />
-              </WeddingExpensesProvider>
-            }
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/auth" element={<Auth />} />
-        </Routes>
+        <AppRoutes />
       </div>
     </Router>
   )
