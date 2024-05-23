@@ -1,11 +1,14 @@
-import { useMemo, useState } from 'react'
+import React, { useMemo, useCallback, useState } from 'react'
+import { useTable, Column } from 'react-table'
 import {
-  WeddingExpense,
-  useWeddingExpenses
+  useWeddingExpenses,
+  WeddingExpense
 } from '../../context/wedding-expenses-context'
-import { useTable, Column, CellProps } from 'react-table'
 
-interface EditableCellProps extends CellProps<WeddingExpense> {
+interface EditableCellProps {
+  value: any
+  row: any
+  column: any
   updateExpense: (rowIndex: number, columnId: string, value: any) => void
   editable: boolean
 }
@@ -38,10 +41,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
           onBlur={onBlur}
           style={{ width: '100%' }}
         />
-      ) : typeof value === 'string' ? (
-        value
       ) : (
-        value.toString()
+        value
       )}
     </div>
   )
@@ -50,8 +51,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
 export const WeddingExpenseList = () => {
   const { expenses, updateExpense, deleteExpense } = useWeddingExpenses()
 
-  const updateCellExpense = useMemo(
-    () => (rowIndex: number, columnId: string, value: any) => {
+  const updateCellExpense = useCallback(
+    (rowIndex: number, columnId: string, value: any) => {
       const id = expenses[rowIndex]?._id
       updateExpense(id ?? '', { ...expenses[rowIndex], [columnId]: value })
     },
@@ -141,21 +142,25 @@ export const WeddingExpenseList = () => {
     <div className="table-container">
       <table {...getTableProps()} className="table">
         <thead>
-          {headerGroups.map((hg) => (
-            <tr {...hg.getHeaderGroupProps()}>
-              {hg.headers.map((column) => (
-                <th {...column.getHeaderProps()}> {column.render('Header')}</th>
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps()} key={column.id}>
+                  {column.render('Header')}
+                </th>
               ))}
             </tr>
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row, idx) => {
+          {rows.map((row) => {
             prepareRow(row)
             return (
-              <tr {...row.getRowProps()}>
+              <tr {...row.getRowProps()} key={row.id}>
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}> {cell.render('Cell')} </td>
+                  <td {...cell.getCellProps()} key={cell.column.id}>
+                    {cell.render('Cell')}
+                  </td>
                 ))}
               </tr>
             )
@@ -165,3 +170,5 @@ export const WeddingExpenseList = () => {
     </div>
   )
 }
+
+export default WeddingExpenseList
