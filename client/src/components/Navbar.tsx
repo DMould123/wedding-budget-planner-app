@@ -43,7 +43,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-right">
           <SignedIn>
-            <UserButton />
+            <UserButton afterSignOutUrl="/auth" />
           </SignedIn>
         </div>
       </div>

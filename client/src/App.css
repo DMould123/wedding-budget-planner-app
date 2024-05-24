@@ -19,9 +19,43 @@ html {
 
 /* Styling for sign-in container */
 .sign-in-container {
-  margin-top: 300px;
+  margin-top: 150px;
+  text-align: center;
 }
 
 .sign-in-container button {
   margin: 10px;
+}
+
+/* Styling for sign-in header */
+.sign-in-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in-header span {
+  margin-right: 10px;
+}
+
+.sign-in-header img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .sign-in-container {
+    margin-top: 100px;
+    padding: 0 20px;
+  }
+
+  .sign-in-header {
+    flex-direction: column;
+  }
+
+  .sign-in-header span {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }

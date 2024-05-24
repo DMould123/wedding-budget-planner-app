@@ -33,7 +33,7 @@ body {
 }
 
 .logo img {
-  height: 40px; /* Adjust based on your logo size */
+  height: 40px;
 }
 
 .menu-icon {
@@ -113,7 +113,7 @@ body {
     position: absolute;
     right: 0;
     top: 60px;
-    background-color: #fef7e5;
+    background-color: #ff5e7d;
     width: 0px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease-in;
