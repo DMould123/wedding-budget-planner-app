@@ -4,14 +4,7 @@ import {
   useWeddingExpenses,
   WeddingExpense
 } from '../../context/wedding-expenses-context'
-
-interface EditableCellProps {
-  value: any
-  row: any
-  column: any
-  updateExpense: (rowIndex: number, columnId: string, value: any) => void
-  editable: boolean
-}
+import { EditableCellProps } from '../interfaces/interfaces'
 
 const EditableCell: React.FC<EditableCellProps> = ({
   value: initialValue,
