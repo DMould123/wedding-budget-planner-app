@@ -1,22 +1,9 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import {
+  WeddingExpense,
+  WeddingExpensesContextType
+} from '../interfaces/interfaces'
 import { useUser } from '@clerk/clerk-react'
-
-export interface WeddingExpense {
-  _id?: string
-  userId: string
-  date: Date
-  description: string
-  cost: number
-  category: string
-  paymentMethod: string
-}
-
-interface WeddingExpensesContextType {
-  expenses: WeddingExpense[]
-  addExpense: (expense: WeddingExpense) => void
-  updateExpense: (id: string, updatedExpense: WeddingExpense) => void
-  deleteExpense: (id: string) => void
-}
 
 export const WeddingExpensesContext = createContext<
   WeddingExpensesContextType | undefined
