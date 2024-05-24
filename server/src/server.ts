@@ -1,6 +1,6 @@
 import express, { Express } from 'express'
 import mongoose from 'mongoose'
-import weddingExpensesRouter from './routes/wedding-routes'
+import weddingExpensesRouter from './routes/WeddingRoutes'
 import cors from 'cors'
 import dotenv from 'dotenv'
 

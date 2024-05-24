@@ -79,6 +79,7 @@ label {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  min-width: 600px; /* Ensure table doesn't shrink too much */
 }
 
 .table th,
@@ -101,4 +102,50 @@ label {
 
 .table tbody tr:hover {
   background-color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 5px;
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+
+  .table th::before,
+  .table td::before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .table th {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .table td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .table td::before {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    white-space: nowrap;
+  }
 }

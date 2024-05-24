@@ -1,7 +1,7 @@
 import { useUser } from '@clerk/clerk-react'
-import { WeddingExpenseForm } from './wedding-expense-form'
-import { WeddingExpenseList } from './wedding-expense-list'
-import './wedding-expense.css'
+import { WeddingExpenseForm } from './WeddingExpenseForm'
+import { WeddingExpenseList } from './WeddingExpenseList'
+import './WeddingExpense.css'
 import { useWeddingExpenses } from '../../context/wedding-expenses-context'
 import { useMemo } from 'react'
 

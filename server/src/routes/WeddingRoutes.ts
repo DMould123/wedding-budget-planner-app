@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express'
-import WeddingExpensesModel from '../schema/wedding-expenses'
+import WeddingExpensesModel from '../schema/WeddingExpense'
 
 const router = express.Router()
 

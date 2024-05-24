@@ -158,7 +158,11 @@ export const WeddingExpenseList = () => {
             return (
               <tr {...row.getRowProps()} key={row.id}>
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()} key={cell.column.id}>
+                  <td
+                    {...cell.getCellProps()}
+                    key={cell.column.id}
+                    data-label={cell.column.Header}
+                  >
                     {cell.render('Cell')}
                   </td>
                 ))}
