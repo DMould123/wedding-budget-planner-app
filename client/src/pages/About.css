@@ -4,14 +4,6 @@
   background-color: #f9f9f9;
 }
 
-.heading {
-  text-align: center;
-  text-transform: capitalize;
-  font-size: 3rem;
-  font-weight: 300;
-  margin-bottom: 20px;
-}
-
 .about-container {
   display: flex;
   flex-direction: column;
