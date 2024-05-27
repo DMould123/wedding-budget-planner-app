@@ -33,28 +33,7 @@ export const Contact: React.FC = () => {
       <div className="contact-info">
         <div className="info-item">
           <FiMail />
-          <p>example@email.com</p>
-        </div>
-        <div className="info-item">
-          <FaMapMarkerAlt />
-          <p>
-            49 Smith St. <br /> Saint Cloud, MN 56301
-          </p>
-        </div>
-        <div className="info-item">
-          <FiPhone />
-          <p>123-456-7890</p>
-        </div>
-        <div className="social-icons">
-          <a href="#">
-            <FaLinkedin />
-          </a>
-          <a href="#">
-            <FaTwitter />
-          </a>
-          <a href="#">
-            <FaFacebook />
-          </a>
+          <p>david.mould123@yahoo.com</p>
         </div>
       </div>
     </div>
