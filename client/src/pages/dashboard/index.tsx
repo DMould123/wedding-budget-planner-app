@@ -17,7 +17,6 @@ export const Dashboard = () => {
     <div className="dashboard-container">
       <h1>Welcome {user?.firstName}! Here Are Your Wedding Finances:</h1>
       <WeddingExpenseForm />
-      <div>Wedding Budget Left: {weddingTotal} SEK</div>
       <WeddingExpenseList />
     </div>
   )

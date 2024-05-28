@@ -115,9 +115,15 @@ body {
   margin-right: 20px;
 }
 
+.wallet-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 .wallet-dropdown {
   position: absolute;
-  top: 40px;
+  top: calc(100% + 10px);
   right: 0;
   background-color: white;
   border: 1px solid #ccc;
