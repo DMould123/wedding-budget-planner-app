@@ -5,6 +5,9 @@ import {
 } from 'react-icons/ai'
 import './About.css'
 
+const cv = '/Examensbevis - David Mould.pdf'
+const grades = '/David.Mould-Fullstack Developer.pdf'
+
 export const About: React.FC = () => {
   const handleDownloadCV = (): void => {
     window.open(cv, '_blank')
@@ -27,7 +30,7 @@ export const About: React.FC = () => {
           <img
             className="about-img"
             src="https://res.cloudinary.com/dele4dvi9/image/upload/v1680781966/memory-game-pictures/1679569823407_u98yg8.jpg"
-            alt="David"
+            alt="David Mould"
           />
           <div className="social-links">
             <a
@@ -60,6 +63,17 @@ export const About: React.FC = () => {
           If you are keen to find out more about me, please visit my Portfolio
           website.
         </p>
+        <div className="button-container">
+          <button className="dw-btn" onClick={handleDownloadCV}>
+            Download CV
+          </button>
+          <button className="dw-btn" onClick={handleDownloadGrades}>
+            Download Grades
+          </button>
+          <button className="dw-btn" onClick={handleVisitWebsite}>
+            Visit Portfolio
+          </button>
+        </div>
       </div>
     </div>
   )
