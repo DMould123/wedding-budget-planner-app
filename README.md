@@ -4,7 +4,6 @@
 
 The Wedding Budget Planner is a web application designed to help couples manage and track their wedding expenses efficiently. The app includes a user authentication system, a responsive navigation bar, and pages for managing wedding expenses, viewing profiles, and contacting the app creator.
 
-
 ## Objectives 🎯
 
 The objectives of the Wedding Budget Planner project include:
@@ -13,10 +12,12 @@ The objectives of the Wedding Budget Planner project include:
 - 💻 Provide a user-friendly interface: Ensure the app is easy to navigate and use, with a clean and responsive design.
 - 📊 Visualize expense data: Offer features to visualize expenses through charts and summaries for better financial insights.
 - 🌐 Showcase development skills: Demonstrate proficiency in MERN, and other web technologies.
-- 
+-
+
 ## Tech Stack 💻
 
 ### Frontend
+
 - React: A JavaScript library for building user interfaces.
 - React Router DOM: Declarative routing for React applications.
 - Clerk: User authentication and management.
@@ -27,6 +28,7 @@ The objectives of the Wedding Budget Planner project include:
 - @vitejs/plugin-react: Official Vite plugin for React.
 
 ### Backend
+
 - Express: A minimal and flexible Node.js web application framework.
 - Mongoose: An Object Data Modeling (ODM) library for MongoDB and Node.js.
 - Nodemon: A tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
@@ -53,10 +55,13 @@ npm install
 ### Backend Setup:
 
 Create a .env file in the root directory of the backend and add your MongoDB URI:
+
 ```bash
 MONGODB_URI=your-mongodb-uri
 ```
+
 Start the backend server:
+
 ```bash
 npm run dev
 ```
@@ -64,14 +69,19 @@ npm run dev
 ### Frontend Setup:
 
 Create a .env file in the root directory of the backend and add your MongoDB URI:
+
 ```bash
 VITE_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
 ```
+
 Start the frontend server:
+
 ```bash
 npm run dev
 ```
+
 ## Features ✨
+
 - 🎉 Animation effects: Enhances user experience with engaging animations.
 - 🔗 Social media links: Easy access to the creator's profiles.
 - 📱💻 Responsive design: Ensures a seamless experience across different devices.
@@ -84,4 +94,3 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 ## Author 📚
 
 - David Mould
-
