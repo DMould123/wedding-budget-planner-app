@@ -5,8 +5,8 @@ import {
 } from 'react-icons/ai'
 import './About.css'
 
-const cv = '/Examensbevis - David Mould.pdf'
-const grades = '/David.Mould-Fullstack Developer.pdf'
+const grades = '/Examensbevis - David Mould.pdf'
+const cv = '/David.Mould-Fullstack Developer.pdf'
 
 export const About: React.FC = () => {
   const handleDownloadCV = (): void => {
@@ -57,11 +57,11 @@ export const About: React.FC = () => {
           </div>
         </div>
         <p>
-          I'm David Mould, a newly qualified developer! <br />
-          I hope you enjoyed playing my memory game of my favorite football team
-          :) <br />
-          If you are keen to find out more about me, please visit my Portfolio
-          website.
+          I'm David Mould, a Junior Fullstack developer! <br />
+          I hope you find this wedding budget planner helpful in organizing your
+          special day. <br />
+          If you are keen to find out more about me and my other projects,
+          please visit my Portfolio website.
         </p>
         <div className="button-container">
           <button className="dw-btn" onClick={handleDownloadCV}>
