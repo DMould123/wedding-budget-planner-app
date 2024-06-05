@@ -71,7 +71,7 @@ export const About: React.FC = () => {
             Download Grades
           </button>
           <button className="dw-btn" onClick={handleVisitWebsite}>
-            Visit Portfolio
+            Visit My Portfolio
           </button>
         </div>
       </div>
