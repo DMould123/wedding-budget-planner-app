@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="left-section">
           <div className="logo">
             <NavLink to="/">
-              <img src="/4155044.png" alt="Logo" />
+              <img src="/ring.png" alt="Logo" aria-label="wedding ring image" />
             </NavLink>
           </div>
           <div className="menu-icon" onClick={handleShowNavbar}>
